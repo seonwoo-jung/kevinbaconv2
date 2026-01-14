@@ -3,10 +3,11 @@ package main;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 
 public class Graph<E, T> {
-	private HashMap<E, Vertex> vertices;
+	private Map<E, Vertex> vertices;
 	/*
 	 * We need a data structure to hold our data as an instance
 	 * Requirements:
@@ -255,7 +256,8 @@ public class Graph<E, T> {
 				count++;
 			}
 		}
-		if (count == 0) return 0.0;
+		if (count == 0)
+			return 0.0;
 
 		return Math.round((double)total / count * 100.0) / 100.0;
 	}
