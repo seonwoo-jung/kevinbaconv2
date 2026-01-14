@@ -28,7 +28,7 @@ public class Testing {
      * testEquals("Test 1", 4.0, 3.0) -> "Test 1: result: 4.0, expected: 3.0
      * testEquals("Test 2", true, true) -> "Test 2: OK"
      * testEquals("Test 3", 1, 1.0) -> "Test 3: result 1, expected 1.0"
-     * 
+     *
      * @param caseID   String caseID: the ID of this test case, e.g. "Test 1"
      * @param result   Object result: the actual result of some function call
      * @param expected Object expected: the expected result of some function call
@@ -83,7 +83,7 @@ public class Testing {
                 }
             }
             else {
-                System.out.println(TEXT_RED + caseID + ": result: " + result + ", expected: " + expected + ANSI_RESET);    
+                System.out.println(TEXT_RED + caseID + ": result: " + result + ", expected: " + expected + ANSI_RESET);
             }
         } else if (result.equals(expected)) {
             System.out.println(TEXT_GREEN + caseID + ": OK" + ANSI_RESET);
@@ -100,7 +100,7 @@ public class Testing {
      * testEquals("Test 1", 4.0, 3.0) -> "Test 1: result: 4.0, expected: 3.0
      * testEquals("Test 2", true, true) -> "Test 2: OK"
      * testEquals("Test 3", 1, 1.0) -> "Test 3: result 1, expected 1.0"
-     * 
+     *
      * @param caseID   String caseID: the ID of this test case, e.g. "Test 1"
      * @param result   Object result: the actual result of some function call
      * @param expected Object expected: the expected result of some function call
@@ -111,7 +111,7 @@ public class Testing {
         } else {
             System.out.println(TEXT_RED + caseID + ": result: " + result + ", expected: " + expected+ ANSI_RESET);
         }
-        
+
     }
 
 }

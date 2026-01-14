@@ -1,9 +1,8 @@
 package tests;
 
 import java.util.ArrayList;
-import java.util.List;
+
 import main.Graph;
-import main.KevinBacon;
 
 // Test cases for the LabeledGraph class
 public class LabeledGraphTest {
@@ -14,11 +13,10 @@ public class LabeledGraphTest {
     public static void main(String[] args) {
         testBFS();
 
-        // enable these if you want them: 
+        // enable these if you want them:
         // testFurthest();
         // testAverageConnectivity();
         // testMostEdgesBetween();
-
     }
 
     public static void testBFS() {
@@ -83,7 +81,7 @@ public class LabeledGraphTest {
     public static void testFurthest() {
         System.out.println(TEXT_BLUE + "<*** Testing Furthest ***>" +ANSI_RESET);
         Graph<String, Integer> graph = new Graph<>();
-        
+
         // Add vertices and edges to the graph
         graph.addVertex("A");
         graph.addVertex("B");
@@ -105,16 +103,16 @@ public class LabeledGraphTest {
         expectedPath.add("C");
         expectedPath.add(5);
         expectedPath.add("E");
-        
+
         // Test furthest from A
         ArrayList<Object> furthestVertex = graph.furthest("A");
         Testing.testEquals("Furthest vertex from A should be E", furthestVertex, expectedPath);
     }
-    
+
     public static void testAverageConnectivity() {
         System.out.println(TEXT_BLUE + "<*** Testing Average Connectivity ***>" +ANSI_RESET);
         Graph<String, Integer> graph = new Graph<>();
-        
+
         // Add vertices and edges to the graph
         graph.addVertex("A");
         graph.addVertex("B");
@@ -133,7 +131,7 @@ public class LabeledGraphTest {
     public static void testMostEdgesBetween() {
         System.out.println(TEXT_BLUE + "<*** Testing Most Edges Between ***>" + ANSI_RESET);
         Graph<String, Integer> graph = new Graph<>();
-        
+
         // Add vertices and edges to the graph
         graph.addVertex("A");
         graph.addVertex("B");
@@ -147,7 +145,7 @@ public class LabeledGraphTest {
         graph.connect("C", "E", 5);
         graph.connect("B", "E", 6);
         graph.connect("A", "E", 7);
-    
+
         // Test most edges between A and E
         ArrayList<Object> expectedPath = new ArrayList<>();
         expectedPath.add("A");
@@ -155,11 +153,11 @@ public class LabeledGraphTest {
         expectedPath.add("B");
         expectedPath.add(6);
         expectedPath.add("E");
-    
+
         ArrayList<Object> actualPath = graph.mostEdgesBetween("A");
-    
+
         Testing.testEquals("Most edges between A and E", actualPath, expectedPath);
-    
+
         // Test most edges between A and C
         expectedPath.clear();
         expectedPath.add("A");
@@ -167,11 +165,11 @@ public class LabeledGraphTest {
         expectedPath.add("D");
         expectedPath.add(4);
         expectedPath.add("C");
-    
+
         actualPath = graph.mostEdgesBetween("A");
-    
+
         Testing.testEquals("Most edges between A and C", actualPath, expectedPath);
-    
+
         // Test most edges between B and D
         expectedPath.clear();
         expectedPath.add("B");
@@ -179,15 +177,15 @@ public class LabeledGraphTest {
         expectedPath.add("C");
         expectedPath.add(4);
         expectedPath.add("D");
-    
+
         actualPath = graph.mostEdgesBetween("B");
-    
+
         Testing.testEquals("Most edges for B ", actualPath, expectedPath);
-    
+
         // Test most edges between non-existent vertices
         actualPath = graph.mostEdgesBetween("X");
-    
+
         Testing.testEquals("Most edges between non-existent vertices", actualPath, null);
     }
-    
+
 }
